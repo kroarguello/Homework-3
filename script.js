@@ -5,12 +5,13 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
  //var password = generatePassword();
  //var passwordText = document.querySelector("#password");
-
-  //passwordText.value = password;
   
 generatePassword();
+//passwordText.value = password;
+//passwordText.value = palabra;
 
 }
+
 
 
 // Add event listener to generate button
@@ -90,13 +91,18 @@ function passGenerate(a,b,c,d){
    
   } 
 
+ 
   palabra =palabra + Rnumberss + RletterUss + Rletterss + Rspecialss;
-  
-  
-  alert( "este es su pssw : \n" + palabra + "\n vuelta :" + i);
+
   
   }
-//alert( "este es su pssw : \n" + Rnumberss + RletterUss + Rletterss + Rspecialss);
+//Esto esta bien  
+palabra = palabra.slice(0,a); 
+var passwordText = document.querySelector("#password");
+passwordText.value = palabra;
+//alert( "este es su pssw : \n" + palabra);
+
+//return palabra;
   
 }
 
