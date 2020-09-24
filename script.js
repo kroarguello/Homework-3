@@ -56,7 +56,11 @@ function generatePassword(){
 // Generate the random number/letter/special in combination 
 
 function passGenerate(a,b,c,d){
-    
+  
+ 
+  var palabra = ""
+  for(var i=1; palabra.length <= (a-1);i++){
+
    var numberss = "0123456789";
    var x = Math.floor(Math.random()*numberss.length);
    var Rnumberss = numberss.charAt(x);
@@ -69,25 +73,30 @@ function passGenerate(a,b,c,d){
      var letterss = "abcdefghijklmnopqrstuvwxyz";
      var x = Math.floor(Math.random()*letterss.length);
      Rletterss = letterss.charAt(x);
-     alert ("Escogio " + Rletterss + "\n" + x);
+     
    } 
       
    if (c == true){
      var letterUss = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
      var x = Math.floor(Math.random()*letterUss.length);
      RletterUss = letterUss.charAt(x);
-     alert ("Escogio grande"  + RletterUss);
+    
   }
    
-  if (b == true){
+  if (d == true){
     var specialss = "!#$%&*?";
     var x = Math.floor(Math.random()*specialss.length);
     Rspecialss = specialss.charAt(x);
-    alert ("Special escogio " + Rspecialss);
+   
   } 
-  
 
-alert( "este es su pssw : \n" + Rnumberss + RletterUss + Rletterss + Rspecialss);
+  palabra =palabra + Rnumberss + RletterUss + Rletterss + Rspecialss;
+  
+  
+  alert( "este es su pssw : \n" + palabra + "\n vuelta :" + i);
+  
+  }
+//alert( "este es su pssw : \n" + Rnumberss + RletterUss + Rletterss + Rspecialss);
   
 }
 
