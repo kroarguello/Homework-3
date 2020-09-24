@@ -27,11 +27,11 @@ function generatePassword(){
           if(sinum != null && sinum != 0 ){
       
               if (sinum >= 8 && sinum <= 128){
-                 alert("Your password will have " + sinum + " numbers");  
+                 alert("Your password will have " + sinum + " characters");  
                  var silower = confirm("Do you want lower case ?");
                  var siupper = confirm("Do you want Upper case ?");
                  var sispecial = confirm("Do you want Special characters ?");
-                 
+                 passGenerate(sinum,silower,siupper,sispecial);
                  seguirNext = 3;
               }
               else{
@@ -53,22 +53,44 @@ function generatePassword(){
   
 }
 
+// Generate the random number/letter/special in combination 
+
+function passGenerate(a,b,c,d){
+    
+   var numberss = "0123456789";
+   var x = Math.floor(Math.random()*numberss.length);
+   var Rnumberss = numberss.charAt(x);
+   var Rletterss = "";
+   var RletterUss = "";
+   var Rspecialss = "";
+ 
+   if (b == true){
+     
+     var letterss = "abcdefghijklmnopqrstuvwxyz";
+     var x = Math.floor(Math.random()*letterss.length);
+     Rletterss = letterss.charAt(x);
+     alert ("Escogio " + Rletterss + "\n" + x);
+   } 
+      
+   if (c == true){
+     var letterUss = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+     var x = Math.floor(Math.random()*letterUss.length);
+     RletterUss = letterUss.charAt(x);
+     alert ("Escogio grande"  + RletterUss);
+  }
+   
+  if (b == true){
+    var specialss = "!#$%&*?";
+    var x = Math.floor(Math.random()*specialss.length);
+    Rspecialss = specialss.charAt(x);
+    alert ("Special escogio " + Rspecialss);
+  } 
+  
+
+alert( "este es su pssw : \n" + Rnumberss + RletterUss + Rletterss + Rspecialss);
+  
+}
 
 
 
-
-//esto es mio
-//promts with question 
-///function click(){
-  //generateBtn.onClick=alert("hola");   
-
-//}
-
-//generatePassword(alert("holaa"));
-
-
-
-
-//<input name="button2" type="button" 
-//onclick='alert("ESTA ES EL ALERTA.")' value="Click Aquí para ver el ALERTA" />
 
