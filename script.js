@@ -1,25 +1,12 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
-function writePassword() {
- //var password = generatePassword();
- //var passwordText = document.querySelector("#password");
-  
-generatePassword();
-//passwordText.value = password;
-//passwordText.value = palabra;
-
-}
-
-
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-//Asking if you want to continue and how many numbers and if between 8 and 128
+//Validations if you want to continue and how many numbers and if between 8 and 128
 
-function generatePassword(){
+function writePassword(){
    
   if (confirm("Do you want to continue Generating Password") == true){
         var seguirNext=1;
@@ -32,8 +19,8 @@ function generatePassword(){
                  var silower = confirm("Do you want lower case ?");
                  var siupper = confirm("Do you want Upper case ?");
                  var sispecial = confirm("Do you want Special characters ?");
-                 passGenerate(sinum,silower,siupper,sispecial);
-                 seguirNext = 3;
+                generatePassword(sinum,silower,siupper,sispecial);
+                seguirNext = 3;
               }
               else{
                  alert("Try again, should be a number between 8 and 128");
@@ -56,7 +43,7 @@ function generatePassword(){
 
 // Generate the random number/letter/special in combination 
 
-function passGenerate(a,b,c,d){
+function generatePassword(a,b,c,d){
   
  
   var palabra = ""
@@ -70,39 +57,31 @@ function passGenerate(a,b,c,d){
    var Rspecialss = "";
  
    if (b == true){
-     
      var letterss = "abcdefghijklmnopqrstuvwxyz";
      var x = Math.floor(Math.random()*letterss.length);
      Rletterss = letterss.charAt(x);
-     
    } 
       
    if (c == true){
      var letterUss = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
      var x = Math.floor(Math.random()*letterUss.length);
      RletterUss = letterUss.charAt(x);
-    
-  }
+   }
    
   if (d == true){
     var specialss = "!#$%&*?";
     var x = Math.floor(Math.random()*specialss.length);
     Rspecialss = specialss.charAt(x);
-   
+
   } 
 
- 
-  palabra =palabra + Rnumberss + RletterUss + Rletterss + Rspecialss;
-
+   palabra =palabra + Rnumberss + RletterUss + Rletterss + Rspecialss;
   
   }
-//Esto esta bien  
+//Password Generated with the number of the characters and printing in the HTML box 
 palabra = palabra.slice(0,a); 
 var passwordText = document.querySelector("#password");
 passwordText.value = palabra;
-//alert( "este es su pssw : \n" + palabra);
-
-//return palabra;
   
 }
 
